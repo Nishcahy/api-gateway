@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=buid /target/Api-gateway-0.0.1-SNAPSHOT.jar Api-gateway.jar
+COPY --from=buid /target/api-gateway-0.0.1-SNAPSHOT.jar api-gateway.jar
 EXPOSE 8082
-ENTRYPOINT [ "java","-jar","Api-gateway.jar"]
+ENTRYPOINT [ "java","-jar","api-gateway.jar"]
